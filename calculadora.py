@@ -1,58 +1,118 @@
-# Definição da função adicionar, que irá somar dois números.
-# A função ainda não foi implementada, então usamos 'pass' temporariamente.
+import math as mt
+
+def numeros():
+
+    n = float(input("Digite o número: "))
+    return n
+
 def adicionar(a, b):
-    pass  # TODO: Implementar função de adição
 
-# Definição da função subtrair, que será responsável por subtrair o segundo número do primeiro.
-# Assim como a função de adição, ainda não está implementada e usa 'pass' como placeholder.
+    return a + b 
+
 def subtrair(a, b):
-    pass  # TODO: Implementar função de subtração
 
-# Definição da função multiplicar, que multiplicará dois números.
-# Também não foi implementada ainda, e 'pass' é usado para marcar a implementação futura.
+    return a - b
+
 def multiplicar(a, b):
-    pass  # TODO: Implementar função de multiplicação
 
-# Definição da função dividir, que fará a divisão do primeiro número pelo segundo.
-# Novamente, a função ainda não foi implementada, e 'pass' é utilizado.
-# É importante que no futuro seja tratado o caso de divisão por zero.
+    return a * b
+
 def dividir(a, b):
-    pass  # TODO: Implementar função de divisão
 
-# Função principal da calculadora, responsável por interagir com o usuário e realizar operações.
+    return a / b 
+
+def exponenciacao(a, b):
+
+    return a ** b
+
+def radiciacao(a):
+
+    raiz = mt.sqrt(a)
+    return raiz
+
+def porcentagem(a, b):
+
+    return a * (b/100)
+
+def fatorial(a):
+
+    resultado = 1
+    count = 1
+
+    while count <= a:
+
+        resultado *= count
+        count += 1
+
+
+    return resultado
+    
+
 def calculadora():
-    # Exibe as opções de operação disponíveis para o usuário escolher.
+
     print("Selecione a operação.")
     print("1.Adição")
     print("2.Subtração")
     print("3.Multiplicação")
     print("4.Divisão")
+    print("5.Exponenciação")
+    print("6.Radiciação")
+    print("7.Porcentagem")
+    print("8.Fatorial")
 
-    # Recebe a escolha da operação do usuário.
-    escolha = input("Digite a opção (1/2/3/4): ")
+    escolha = input("Digite a opção (1/2/3/4/5/6/7/8): ")
 
-    # Solicita dois números do usuário e converte-os para o tipo float.
-    num1 = float(input("Digite o primeiro número: "))
-    num2 = float(input("Digite o segundo número: "))
-
-    # Verifica qual operação foi selecionada pelo usuário.
     if escolha == '1':
-        # Se o usuário escolheu adição, chama a função adicionar com os números inseridos e exibe o resultado.
+
+        num1 = numeros()
+        num2 = numeros()
         print(f"{num1} + {num2} = {adicionar(num1, num2)}")
+        
     elif escolha == '2':
-        # Se o usuário escolheu subtração, chama a função subtrair e exibe o resultado.
+
+        num1 = numeros()
+        num2 = numeros()
         print(f"{num1} - {num2} = {subtrair(num1, num2)}")
+
     elif escolha == '3':
-        # Se o usuário escolheu multiplicação, chama a função multiplicar e exibe o resultado.
+
+        num1 = numeros()
+        num2 = numeros()
         print(f"{num1} * {num2} = {multiplicar(num1, num2)}")
+
     elif escolha == '4':
-        # Se o usuário escolheu divisão, chama a função dividir e exibe o resultado.
-        # No futuro, deve-se validar para evitar divisão por zero.
+
+        num1 = numeros()
+        num2 = numeros()
         print(f"{num1} / {num2} = {dividir(num1, num2)}")
+
+    elif escolha == '5':
+
+        num1 = numeros()
+        num2 = numeros()
+        print(f"{num1} ** {num2} = {exponenciacao(num1, num2)}")
+
+    elif escolha == '6':
+        
+        num1 = numeros()
+        raiz = radiciacao(num1)
+        print(f"Raiz quadrada de {num1} = {raiz}")
+
+    elif escolha == '7':
+
+        num1 = numeros()
+        num2 = numeros()
+        print(f"{num2}% de {num1} é igual = {porcentagem(num1, num2)}")
+
+    elif escolha == '8':
+
+        num1 = numeros()
+        print(f"Fatorial do numero {num1} é = {fatorial(num1)}")
+
     else:
-        # Se o usuário inserir uma opção inválida, exibe uma mensagem de erro.
+
         print("Opção inválida")
 
-# Bloco principal, que executa a função 'calculadora' quando o script é executado diretamente.
+
 if __name__ == "__main__":
     calculadora()

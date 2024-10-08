@@ -1,23 +1,28 @@
 # Definição da função adicionar, que irá somar dois números.
 # A função ainda não foi implementada, então usamos 'pass' temporariamente.
 def adicionar(a, b):
-    pass  # TODO: Implementar função de adição
+    return a+b
 
 # Definição da função subtrair, que será responsável por subtrair o segundo número do primeiro.
 # Assim como a função de adição, ainda não está implementada e usa 'pass' como placeholder.
 def subtrair(a, b):
-    pass  # TODO: Implementar função de subtração
+    return a-b
 
 # Definição da função multiplicar, que multiplicará dois números.
 # Também não foi implementada ainda, e 'pass' é usado para marcar a implementação futura.
 def multiplicar(a, b):
-    pass  # TODO: Implementar função de multiplicação
+    return a*b
 
 # Definição da função dividir, que fará a divisão do primeiro número pelo segundo.
 # Novamente, a função ainda não foi implementada, e 'pass' é utilizado.
 # É importante que no futuro seja tratado o caso de divisão por zero.
 def dividir(a, b):
-    pass  # TODO: Implementar função de divisão
+    if b == 0:
+        return "Erro: Divisão por zero"
+    return a/b
+
+def potencia(a, b):
+    return a**b
 
 # Função principal da calculadora, responsável por interagir com o usuário e realizar operações.
 def calculadora():
@@ -27,6 +32,7 @@ def calculadora():
     print("2.Subtração")
     print("3.Multiplicação")
     print("4.Divisão")
+    print("5.Potenciação")
 
     # Recebe a escolha da operação do usuário.
     escolha = input("Digite a opção (1/2/3/4): ")
@@ -49,6 +55,8 @@ def calculadora():
         # Se o usuário escolheu divisão, chama a função dividir e exibe o resultado.
         # No futuro, deve-se validar para evitar divisão por zero.
         print(f"{num1} / {num2} = {dividir(num1, num2)}")
+    elif escolha == '5':
+        print(f"{num1} ^ {num2} = {potencia(num1, num2)}")
     else:
         # Se o usuário inserir uma opção inválida, exibe uma mensagem de erro.
         print("Opção inválida")

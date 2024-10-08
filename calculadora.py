@@ -1,23 +1,23 @@
 # Definição da função adicionar, que irá somar dois números.
-# A função ainda não foi implementada, então usamos 'pass' temporariamente.
 def adicionar(a, b):
-    pass  # TODO: Implementar função de adição
+    return a + b # soma o primeiro numero com o segundo
 
 # Definição da função subtrair, que será responsável por subtrair o segundo número do primeiro.
-# Assim como a função de adição, ainda não está implementada e usa 'pass' como placeholder.
 def subtrair(a, b):
-    pass  # TODO: Implementar função de subtração
+    return a - b # subtrai o pimeiro numero pelo segundo
 
 # Definição da função multiplicar, que multiplicará dois números.
-# Também não foi implementada ainda, e 'pass' é usado para marcar a implementação futura.
 def multiplicar(a, b):
-    pass  # TODO: Implementar função de multiplicação
+    return a * b # multiplica o primeiro pelo segundo numero
 
 # Definição da função dividir, que fará a divisão do primeiro número pelo segundo.
-# Novamente, a função ainda não foi implementada, e 'pass' é utilizado.
-# É importante que no futuro seja tratado o caso de divisão por zero.
+# O tratamento de divisão por zero foi adicionada em outra parte do código
 def dividir(a, b):
-    pass  # TODO: Implementar função de divisão
+    return a / b # divide o primeiro numero pelo segundo
+
+# Definição da função potência, que fará a potenciação do primeiro numero pelo segundo
+def potencia(a, b):
+    return a ** b # calcula a potência do primeiro numero pelo segundo
 
 # Função principal da calculadora, responsável por interagir com o usuário e realizar operações.
 def calculadora():
@@ -27,9 +27,10 @@ def calculadora():
     print("2.Subtração")
     print("3.Multiplicação")
     print("4.Divisão")
+    print("5.Potência")
 
     # Recebe a escolha da operação do usuário.
-    escolha = input("Digite a opção (1/2/3/4): ")
+    escolha = input("Digite a opção (1/2/3/4/5): ")
 
     # Solicita dois números do usuário e converte-os para o tipo float.
     num1 = float(input("Digite o primeiro número: "))
@@ -46,9 +47,17 @@ def calculadora():
         # Se o usuário escolheu multiplicação, chama a função multiplicar e exibe o resultado.
         print(f"{num1} * {num2} = {multiplicar(num1, num2)}")
     elif escolha == '4':
-        # Se o usuário escolheu divisão, chama a função dividir e exibe o resultado.
-        # No futuro, deve-se validar para evitar divisão por zero.
-        print(f"{num1} / {num2} = {dividir(num1, num2)}")
+        # Se o usuário escolheu divisão, chama a função dividir e exibe o resultado.    
+        # Foi adicionado um tratamento de erro caso tente dividir por zero
+        if num2 == 0:
+            print("Nao e possivel dividir um numero por zero")
+            print(f"{num1} / {num2}")
+
+        else:    
+            print(f"{num1} / {num2} = {dividir(num1, num2)}")
+    elif escolha == '5':
+        # Se o usuario escolheu potenciação, chama a função de potência e exibe o resultado
+        print(f"{num1} ** {num2} = {potencia(num1, num2)}")        
     else:
         # Se o usuário inserir uma opção inválida, exibe uma mensagem de erro.
         print("Opção inválida")

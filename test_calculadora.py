@@ -3,7 +3,7 @@ import unittest
 
 # Importa as funções adicionar, subtrair, multiplicar e dividir do módulo calculadora.
 # Essas são as funções que serão testadas.
-from calculadora import adicionar, subtrair, multiplicar, dividir
+from calculadora import adicionar, subtrair, multiplicar, dividir, potencia
 
 # Definição da classe TestCalculadora que herda de unittest.TestCase.
 # Esta classe contém os métodos de teste para verificar o comportamento correto das funções da calculadora.
@@ -25,22 +25,40 @@ class TestCalculadora(unittest.TestCase):
         self.assertEqual(adicionar(-1, -1), -2)
 
     # Teste da função subtrair.
-    # Atualmente, este teste está vazio, com o uso de 'pass' como placeholder.
-    # Isso indica que a implementação do teste para a função subtrair será feita no futuro.
     def test_subtrair(self):
-        pass  # TODO: Implementar teste para a função subtrair
+
+        self.assertEqual(subtrair(10, 5), 5)
+
+        self.assertEqual(subtrair(-1, 1), -2)
+
+        self.assertEqual(subtrair(-1, -1), 0)
 
     # Teste da função multiplicar.
-    # Assim como o teste anterior, ainda não foi implementado.
-    # Quando for implementado, verificará se a função multiplicar está funcionando corretamente.
     def test_multiplicar(self):
-        pass  # TODO: Implementar teste para a função multiplicar
+
+        self.assertEqual(multiplicar(10, 5), 50)
+
+        self.assertEqual(multiplicar(-1, 1), -1)
+
+        self.assertEqual(multiplicar(-1, -1), 1)
 
     # Teste da função dividir.
-    # Este teste também está vazio por enquanto, aguardando implementação futura.
-    # Deve-se garantir que a função de divisão lide com casos como divisão por zero.
     def test_dividir(self):
-        pass  # TODO: Implementar teste para a função dividir
+
+        self.assertEqual(dividir(10, 5), 2)
+
+        self.assertEqual(dividir(-1, 1), -1)
+
+        self.assertEqual(dividir(-2, -2), 1)
+
+
+    def test_potencia(self):
+
+        self.assertEqual(potencia(2, 2), 4)
+
+        self.assertEqual(potencia(-3, 2), 9)
+
+        self.assertEqual(potencia(-1, -1), -1)
 
 # Bloco principal que verifica se o script está sendo executado diretamente.
 # Se for o caso, ele chama unittest.main(), que roda todos os métodos de teste da classe TestCalculadora.

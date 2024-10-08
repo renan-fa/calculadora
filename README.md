@@ -11,6 +11,7 @@ Uma calculadora simples implementada em Python.
 - **Subtração**: Subtrai o segundo número do primeiro.
 - **Multiplicação**: Multiplica dois números.
 - **Divisão**: Divide o primeiro número pelo segundo, com tratamento de divisão por zero.
+- **Potênciação**: Faz a potência do primeiro nmero pelo segundo.
 
 ## Como Utilizar
 
